@@ -1,0 +1,95 @@
+====================================================================
+               EXERCÍCIOS DE FIXAÇÃO: JAVA COLLECTIONS
+====================================================================
+
+--- EXERCÍCIO 1: Gerenciador de Tarefas (List & ArrayList) ---
+Objetivo: Praticar manipulação básica de List, iteração e ordenação.
+Descrição:
+- Crie uma classe Tarefa (id, descricao, prioridade [ALTA, MEDIA, BAIXA], concluida).
+- Crie uma lista (List<Tarefa>) para gerenciar as tarefas.
+- Implemente métodos para:
+  1. Adicionar novas tarefas.
+  2. Remover uma tarefa pelo ID.
+  3. Marcar uma tarefa como concluída.
+  4. Listar todas as tarefas pendentes, ordenadas por prioridade.
+
+--- EXERCÍCIO 2: Remoção de Duplicatas e Preservação de Ordem (Set) ---
+Objetivo: Compreender as diferenças entre HashSet, LinkedHashSet e TreeSet.
+Descrição:
+- Dada uma List<String> contendo nomes repetidos (ex: "Ana", "Carlos", "Ana", "Bruno", "Beatriz", "Carlos").
+- Faça 3 operações e imprima os resultados:
+  1. Remova as duplicatas sem se importar com a ordem (use HashSet).
+  2. Remova as duplicatas mantendo a ordem original de inserção (use LinkedHashSet).
+  3. Remova as duplicatas e mantenha os nomes em ordem alfabética (use TreeSet).
+
+--- EXERCÍCIO 3: Dicionário de Frequência de Palavras (Map & HashMap) ---
+Objetivo: Manipular chaves e valores com Map.
+Descrição:
+- Dada uma frase longa (String), quebre-a em palavras (dica: use split("\\s+")).
+- Monte um Map<String, Integer> onde a chave é a palavra (em minúsculo) e o valor é a quantidade de vezes que ela aparece na frase.
+- Imprima cada palavra e sua respectiva contagem.
+- Dica de ouro: Tente usar o método map.compute() ou map.merge() do Java 8+.
+
+--- EXERCÍCIO 4: Fila de Atendimento por Prioridade (Queue & PriorityQueue) ---
+Objetivo: Trabalhar com filas e ordenação customizada via Comparator.
+Descrição:
+- Crie uma classe Cliente (nome, idade, ehPreferencial).
+- Crie uma PriorityQueue<Cliente> onde a prioridade de atendimento é:
+  1. Clientes preferenciais (ou com idade >= 60) atendidos primeiro.
+  2. Em caso de empate, ordem de chegada (ou ordem alfabética).
+- Simule a chegada de 5 clientes e depois faça um loop removendo (poll()) e imprimindo cada um até a fila esvaziar.
+
+--- EXERCÍCIO 5: Histórico de Navegação com Pilha (Deque & ArrayDeque) ---
+Objetivo: Trabalhar com estrutura LIFO (Last In, First Out).
+Descrição:
+- Utilize a interface Deque<String> implementada por ArrayDeque para simular o botão "Voltar" de um navegador web.
+- Crie métodos para:
+  1. visitarPagina(String url): adiciona a página no topo da pilha.
+  2. voltarPagina(): remove e exibe a página atual retornando para a anterior.
+  3. exibirHistorico(): exibe todas as páginas visitadas da mais recente para a mais antiga.
+
+--- EXERCÍCIO 6: Indexador de Produtos por Categoria (Map com List/Set) ---
+Objetivo: Trabalhar com Collections aninhadas (Map de Coleções).
+Descrição:
+- Crie uma classe Produto (nome, categoria, preco).
+- Crie uma estrutura Map<String, List<Produto>> onde a chave é o nome da Categoria e o valor é a lista de produtos daquela categoria.
+- Implemente uma função para adicionar produtos que automaticamente identifique se a categoria já existe no Map (se não existir, cria a lista; se existir, adiciona na lista existente).
+
+--- EXERCÍCIO 7: Filtro e Agrupamento com Stream API e Collectors ---
+Objetivo: Unir Collections com Stream API (filter, collect, groupingBy).
+Descrição:
+- Dada uma List<Produto> (da questão anterior):
+  1. Filtre apenas os produtos com preço maior que R$ 50,00.
+  2. Agrupe esses produtos filtrados por categoria usando Collectors.groupingBy().
+  3. Calcule o preço médio dos produtos de cada categoria usando Collectors.averagingDouble().
+
+--- EXERCÍCIO 8: Mapeamento e Transformação de Dados (Stream map e collect) ---
+Objetivo: Praticar transformações de tipos e buscas.
+Descrição:
+- Crie uma classe Usuario (id, nome, email, ativo).
+- Crie uma lista com vários usuários.
+- Usando Stream API:
+  1. Crie uma nova List<String> contendo apenas os e-mails dos usuários ATIVOS.
+  2. Converta a lista original de usuários em um Map<Long, Usuario>, onde a chave é o ID e o valor é o próprio objeto Usuario (dica: Collectors.toMap()).
+
+--- EXERCÍCIO 9: Ordenação Complexa com Comparator e Stream ---
+Objetivo: Dominar métodos de ordenação avançados.
+Descrição:
+- Crie uma classe Funcionario (nome, departamento, salario).
+- Dada uma lista de funcionários, ordene-os seguindo os critérios abaixo em sequência:
+  1. Por Departamento em ordem alfabética.
+  2. Em caso de empate no departamento, pelo Salário em ordem decrescente.
+  3. Em caso de empate no salário, pelo Nome em ordem alfabética.
+- Dica: Use Comparator.comparing(...).thenComparing(...).
+
+--- EXERCÍCIO 10: Operações de Conjuntos / Álgebra de Boole (Set) ---
+Objetivo: Praticar união, intersecção e diferença usando Set.
+Descrição:
+- Dado dois conjuntos Set<Integer>:
+  Set A = [1, 2, 3, 4, 5]
+  Set B = [4, 5, 6, 7, 8]
+- Escreva métodos/lógicas em Java para calcular e exibir:
+  1. União (todos os elementos de A e B). Dica: addAll().
+  2. Intersecção (apenas os elementos presentes em ambos). Dica: retainAll().
+  3. Diferença (elementos que estão em A, mas não estão em B). Dica: removeAll().
+====================================================================
